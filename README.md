@@ -1,13 +1,13 @@
 OVERVIEW:
 
-The object of this project is to create a real-time remote IoT dashboard for vehicle telemetry.
-This project utilizes three different communication protocols: UART, I2C and SPI.
-An STM32G491RE is the microcontroller of choice, as it comes with CAN FD capabilities which can be helpful to communicate with the CAN Bus of the vehicle and adding further functionalities down the line.
-The microcontroller is interfaced with a SIM900A GSM module to take the setup online utilizing its 2G-GSM communication capabilities via the HTTP protocol.
-A NEO 6M module is employed for vehicle tracking, providing GPS coordinates every 1 second using Trilateration. The SIM900A also attaches a timestamp to the waypoints.
+The objective of this project is to create a real-time remote IoT dashboard for vehicle telemetry.
+This project utilizes three different communication protocols: UART, I2C and SPI for the breakout modules to interface with the microcontroller.
+The STM32G491RE is the microcontroller of choice, as it comes with CAN FD capabilities which can be helpful to communicate with the CAN Bus of the vehicle and adding further functionalities down the line.
+The microcontroller is interfaced with a SIM900A GSM module via UART to take the setup online utilizing its 2G-GSM communication capabilities for the HTTP protocol to take the setup online.
+A NEO 6M module is employed for vehicle tracking and interfaced with the microcontroller using UART as well, providing GPS coordinates every 1 second using Trilateration. The SIM900A also attaches a timestamp to the waypoints.
 The vehicle coordinates can be plotted and tracked using Leaflet or the GPS Visualizer portal.
-An MCP2515 is the CAN Transceiver module used to interface with the OBD-2 port of the vehicle with the CAN High and CAN Low pins to read incoming raw CAN data.
-The IoT Dashboard is created using Node Red, wherein, gauges and text boxes and a Leaflet map has been added to the UI to configure an IoT telemetry dashboard which can be retrofitted to any vehicle.
+An MCP2515 is the CAN Transceiver module used to interface with the OBD-2 port of the vehicle with the CAN High and CAN Low pins to read incoming raw CAN data. It is interfaced with the microcontroller using SPI.
+The IoT Dashboard is created using Node Red, wherein, gauges and text boxes and a Leaflet map has been added to the UI to configure an IoT telemetry dashboard which can be retrofitted to any vehicle. Additional functionality can be retrofitted with ease.
 The IoT Dashboard provides basic information right now such as the Date and Time, route tracing and vehicle running parameters such as Speed, RPM and Coolant temperature.
 Currently, a Python script is being used as a placeholder to generate and run a simulated CAN 2.0B message matrix and a pre-recorded 20-km route to test the dashboard itself.
 The setup is currently running in the local machine. The setup will soon be configured to transmit the data online via HTTP post.
