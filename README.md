@@ -8,6 +8,7 @@ A NEO 6M module is employed for vehicle tracking and interfaced with the microco
 The vehicle coordinates can be plotted and tracked using Leaflet or the GPS Visualizer portal.
 An MCP2515 is the CAN Transceiver module used to interface with the OBD-2 port of the vehicle with the CAN High and CAN Low pins to read incoming raw CAN data. It is interfaced with the microcontroller using SPI.
 The IoT Dashboard is created using Node Red, wherein, gauges and text boxes and a Leaflet map has been added to the UI to configure an IoT telemetry dashboard which can be retrofitted to any vehicle. Additional functionality can be retrofitted with ease.
+There is an SSD1306, a 0.96 inch 128x64 resolution dot matrix OLED display interfaced via I2C also added to the setup to provide back-end updates and system status for each module.
 The IoT Dashboard provides basic information right now such as the Date and Time, route tracing and vehicle running parameters such as Speed, RPM and Coolant temperature.
 Currently, a Python script is being used as a placeholder to generate and run a simulated CAN 2.0B message matrix and a pre-recorded 20-km route to test the dashboard itself.
 The setup is currently running in the local machine. The setup will soon be configured to transmit the data online via HTTP post.
